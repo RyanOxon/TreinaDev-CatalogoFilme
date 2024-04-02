@@ -1,8 +1,8 @@
 <div id="listagem-filme">
   <% movies.each do |movie| %>
     <%= link_to movie_path(movie) do%>
-    <% if movie.img_url.present?%>
-      <img src="<%= movie.img_url %>" alt="<%= movie.title%>">
+    <% if movie.picture.attached?%>
+      <%= image_tag(movie.picture, alt: movie.title) %>
     <% else %>
       <%= image_tag("img_padrao.jpg", alt: movie.title) %>    
     <% end %>
