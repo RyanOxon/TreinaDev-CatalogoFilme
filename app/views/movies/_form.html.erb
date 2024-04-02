@@ -1,0 +1,49 @@
+<%= form_with(model: movie) do |form| %>
+
+  <div class="form-div">
+    <%= form.label "Titulo", style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="form-div">
+    <%= form.label :ano_de_lancamento, style: "display: block" %>
+    <%= form.text_field :ano_de_lancamento %>
+  </div>
+
+  <div class="form-div">
+    <%= form.label :sinopse, style: "display: block" %>
+    <%= form.text_field :sinopse %>
+  </div>
+
+  <div class="form-div">
+    <%= form.label :pais, style: "display: block" %>
+    <%= form.text_field :pais %>
+  </div>
+
+  <div class="form-div">
+    <%= form.label :duracao, style: "display: block" %>
+    <%= form.number_field :duracao %>
+  </div>
+
+  <div class="form-div">
+    <%= form.label "Url da capa", style: "display: block" %>
+    <%= form.text_field :img_url %>
+  </div>
+
+  <div class="form-div-select">
+    <%= form.label "Diretor", style: "display: flex" %>
+    <%= form.collection_select :director_id, @directors, :id, :name %>
+    <%= link_to "Cadastrar novo diretor", new_director_path, class:"new-button" %>
+  </div>
+
+
+  <div class="form-div-select">
+    <%= form.label "Genero", style: "display: flex" %>
+    <%= form.collection_select :gender_id, @genders, :id, :name %>
+    <%= link_to "Cadastrar novo genero", new_gender_path, class:"new-button" %>
+  </div>
+
+  <div class="form-div">
+    <%= form.submit "Salvar", id:"save-button" %>
+  </div>
+<% end %>

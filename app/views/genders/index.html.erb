@@ -1,0 +1,16 @@
+<h1 class="page-top">Lista de Generos</h1>
+<%= link_to "Adicionar um novo genero", new_gender_path , class:'new-button'%>
+
+<div id="listagem">
+  <% @genders.each do |gender| %>
+    <%= link_to gender_path(gender) do %>
+      <div id="<%= dom_id gender %>">
+        <p>
+          <%= gender.name %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+

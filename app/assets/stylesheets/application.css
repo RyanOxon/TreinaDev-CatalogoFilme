@@ -1,0 +1,175 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  margin: -10px;
+}
+
+nav {
+  margin: 0;
+  background-color: #333;
+  color: white;
+  padding: 10px 0 0 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top:20px
+}
+
+h2 {
+  font-size: 20px;
+  margin: 40px 0px -20px 30px;
+}
+
+.page-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+
+}
+
+.new-button{
+  background-color: #333;
+  color: white;
+  margin-left: 40px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.delete-button{
+  background-color: #ff0000;
+  color: white;
+  margin: 10px 55px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 1px solid #000000;
+  font-size: 15px;
+}
+
+.form-div {
+  margin: 20px;
+}
+
+.form-div input {
+  font-size: 20px;
+  width: 50%;
+  padding: 5px;
+  margin: 5px 0;
+  text-align: center;
+}
+.form-div-select {
+  align-items: center;
+  margin: 20px;
+  display: flex;  
+}
+
+#save-button {
+  font-weight: bold;
+}
+
+.form-div-select select {
+  font-size: 20px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+#listagem {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 20px ;
+  margin-top: 50px;
+}
+
+#listagem a{
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#listagem div {
+  padding: 20px;
+  background-color: #8f39ff;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  margin : 10px 20px 0px;
+  overflow : hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+#listagem-filme{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  margin: 20px ;
+}
+
+#listagem-filme a{
+  padding: 10px;
+}
+
+#listagem-filme a img{
+  width: 250px;
+  height: 300px;
+}
+
+#info-diretor{
+  padding-left: 20px;
+}
+
+#titulo{
+  font-size: 15px;
+}
+
+#sub-titulo{
+  margin-top: -5px;
+  font-size: 10px;
+  font-style: italic;
+}
+
+#film-show{
+  display: flex;
+  padding: 10px;
+  margin: 20px ;
+  margin-top: 50px;
+}
+
+#film-show div{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+#film-show img{
+  width: 500px;
+}
+
+

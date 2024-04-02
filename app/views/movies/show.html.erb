@@ -1,0 +1,15 @@
+<h1 class="page-top"><%= @movie.title %></h1>
+<div>
+  <%= link_to "Editar este Filme", edit_movie_path(@movie), class:"new-button" %> |
+  <%= link_to "Voltar a lista de Filmes", movies_path, class:"new-button", style:"margin-left: 0"%>
+  <%= button_to "Deletar este filme", @movie, method: :delete, class:"delete-button" %>
+</div>
+
+
+<div id="film-show">
+  <%= render @movie %>
+  
+</div>
+
+
+

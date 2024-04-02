@@ -1,0 +1,45 @@
+<div>
+<% if movie.img_url.present?%>
+      <img src="<%= movie.img_url %>" alt="<%= movie.title%>">
+    <% else %>
+      <%= image_tag("img_padrao.jpg", alt: movie.title) %>    
+    <% end %>
+</div>
+
+<div id="<%= dom_id movie %>">
+  <p>
+    <strong>Titulo:</strong>
+    <%= movie.title %>
+  </p>
+
+  <p>
+    <strong>Ano de lancamento:</strong>
+    <%= movie.ano_de_lancamento %>
+  </p>
+
+  <p>
+    <strong>Sinopse:</strong>
+    <%= movie.sinopse %>
+  </p>
+
+  <p>
+    <strong>Pais:</strong>
+    <%= movie.pais %>
+  </p>
+
+  <p>
+    <strong>Duracao:</strong>
+    <%= movie.duracao %> minutos
+  </p>
+
+  <p>
+    <strong>Diretor:</strong>
+    <%= movie.director.name %>
+  </p>
+
+  <p>
+    <strong>Genero:</strong>
+    <%= movie.gender.name %>
+  </p>
+
+</div>

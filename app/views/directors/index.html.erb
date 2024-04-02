@@ -1,0 +1,16 @@
+<h1 class="page-top">Diretores</h1>
+<%= link_to "Adicionar novo Diretor", new_director_path, class:"new-button" %>
+
+<div id="listagem">
+  <% @directors.each do |director| %>
+    <%= link_to director_path(director) do %>
+      <div id="<%= dom_id director %>">
+        <p>
+          <%= director.name %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+

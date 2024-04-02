@@ -1,0 +1,9 @@
+<h1 class="page-top">Editar Filme</h1>
+<div>
+  <%= link_to "Voltar para Filme", @movie, class:"new-button" %> |
+  <%= link_to "Voltar para a Lista de Filmes", movies_path, class:"new-button" , style:"margin-left: 0"%>
+</div>
+
+<%= render "form", movie: @movie %>
+
+

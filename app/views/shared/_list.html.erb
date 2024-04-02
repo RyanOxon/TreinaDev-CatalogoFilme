@@ -1,0 +1,19 @@
+<div id="listagem-filme">
+  <% movies.each do |movie| %>
+    <%= link_to movie_path(movie) do%>
+    <% if movie.img_url.present?%>
+      <img src="<%= movie.img_url %>" alt="<%= movie.title%>">
+    <% else %>
+      <%= image_tag("img_padrao.jpg", alt: movie.title) %>    
+    <% end %>
+    <div id="<%= dom_id movie %>">
+        <p id="titulo" >
+          <%= movie.title %>
+        </p>
+        <p id="sub-titulo">
+          <%= movie.ano_de_lancamento %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

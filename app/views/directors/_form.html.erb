@@ -1,0 +1,27 @@
+<%= form_with(model: director) do |form| %>
+  
+  <div class="form-div">
+    <%= form.label "Nome", style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="form-div">
+    <%= form.label :nacionalidade, style: "display: block" %>
+    <%= form.text_field :nacionalidade %>
+  </div>
+
+  <div class="form-div">
+    <%= form.label "Data de nascimento", style: "display: block" %>
+    <%= form.text_field :data_nascimento %>
+  </div>
+
+  <div class="form-div-select">
+    <%= form.label "Genero Favorito", style: "display: flex" %>
+    <%= form.collection_select :gender_id, @genders, :id, :name %>
+  </div>
+
+  <div class="form-div" style="margin-top: 40px ">
+    <%= form.submit "Salvar" , id:"save-button"%>
+  </div>
+<% end %>
+ 

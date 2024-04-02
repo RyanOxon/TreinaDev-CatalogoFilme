@@ -1,0 +1,6 @@
+<h1 class="page-top">Catalogo de Filmes</h1>
+<%= link_to "Adicionar novo filme", new_movie_path, class:"new-button" %>
+
+<%= render "/shared/list", movies: @movies.all %>
+
+
