@@ -12,7 +12,9 @@
         </p>
         <p id="sub-titulo">
           <%= movie.ano_de_lancamento %>
+          <%= movie.foi_lancado ? "Ja lançado" : "Em breve nos cinemas" %>
         </p>
+        
       </div>
     <% end %>
   <% end %>

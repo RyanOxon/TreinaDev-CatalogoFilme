@@ -11,6 +11,11 @@
   </div>
 
   <div class="form-div">
+    <%= form.label "Já lançado?"%>
+    <%= form.check_box :foi_lancado %>
+  </div>
+
+  <div class="form-div">
     <%= form.label :sinopse, style: "display: block" %>
     <%= form.text_field :sinopse %>
   </div>

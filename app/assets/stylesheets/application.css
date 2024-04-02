@@ -53,13 +53,11 @@ h2 {
   margin-top: 10px;
 }
 
-
 .page-top{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 20px;
-
 }
 
 .new-button{
@@ -92,9 +90,13 @@ h2 {
   font-size: 20px;
   width: 50%;
   padding: 5px;
-  margin: 5px 0;
-  text-align: center;
 }
+
+.form-div input#movie_foi_lancado {
+  width: 5%;
+  transform: scale(1.3);
+}
+
 .form-div-select {
   align-items: center;
   margin: 20px;
