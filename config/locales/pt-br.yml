@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user_profile:
+        age: Idade
+        name: Nome
+        country: País
+        state: Estado
+        city: Cidade
+        about: Sobre mim
+      models:
+        user_profile: Perfil de Usuário
