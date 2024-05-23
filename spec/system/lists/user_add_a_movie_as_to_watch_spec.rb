@@ -3,6 +3,7 @@ require 'rails_helper'
 describe "User adds a movie on to watch list" do
   it "from movie details" do
     user = User.create!(email: 'user@user', password: '123456')
+    UserProfile.create!(name: "user", age: 66, user: user)
     genre = Gender.create!(name: "Ficção Cientifica")
     director = Director.create!(name: "Christopher Nolan", nacionalidade: "Inglaterra", data_nascimento: "30/06/1970", gender: genre)
     movie = Movie.create!(title: "Interestelar", ano_de_lancamento: "2014", 
@@ -21,6 +22,7 @@ describe "User adds a movie on to watch list" do
   end
   it "sucessfully" do
     user = User.create!(email: 'user@user', password: '123456')
+    UserProfile.create!(name: "user", age: 66, user: user)
     genre = Gender.create!(name: "Ficção Cientifica")
     director = Director.create!(name: "Christopher Nolan", nacionalidade: "Inglaterra", data_nascimento: "30/06/1970", gender: genre)
     movie = Movie.create!(title: "Interestelar", ano_de_lancamento: "2014", 

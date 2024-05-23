@@ -3,6 +3,7 @@ require 'rails_helper'
 describe "user add a movie as favorite" do
   it "from movie details" do
     user = User.create!(email: 'user@user', password: '123456')
+    UserProfile.create!(name: "user", age: 66, user: user)
     genre = Gender.create!(name: "Ficção Cientifica")
     director = Director.create!(name: "Christopher Nolan", nacionalidade: "Inglaterra", data_nascimento: "30/06/1970", gender: genre)
     movie = Movie.create!(title: "Interestelar", ano_de_lancamento: "2014", 
@@ -22,6 +23,7 @@ describe "user add a movie as favorite" do
 
   it "sucessfully" do
     user = User.create!(email: 'user@user', password: '123456')
+    UserProfile.create!(name: "user", age: 66, user: user)
     genre = Gender.create!(name: "Ficção Cientifica")
     director = Director.create!(name: "Christopher Nolan", nacionalidade: "Inglaterra", data_nascimento: "30/06/1970", gender: genre)
     movie = Movie.create!(title: "Interestelar", ano_de_lancamento: "2014", 
@@ -33,7 +35,7 @@ describe "user add a movie as favorite" do
     visit movie_path(movie.id)
     click_on "Favoritos"
 
-    expect(page).to have_content "Adicionado aos favoritos com sucesso"
+    expect(page).to have_content "Adicionado a lista Favoritos com sucesso"
     expect(page).to have_button 'Favoritos', disabled: true
     
   end

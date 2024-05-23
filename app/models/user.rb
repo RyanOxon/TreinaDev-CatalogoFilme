@@ -8,9 +8,14 @@ class User < ApplicationRecord
   has_many :lists
   after_create :set_lists
 
-  def check_list(list, id)
-    fav = self.lists.find_by(category: list)
-    fav.movies.exists?(id: id)
+  def check_list(list_name, id)
+    list = self.lists.find_by(category: list_name)
+    list.movies.exists?(id: id)
+  end
+
+  def find_list(list_name)
+    list = self.lists.find_by(category: list_name)
+    list
   end
   
   private

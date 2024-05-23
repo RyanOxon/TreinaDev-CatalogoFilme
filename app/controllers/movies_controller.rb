@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
     list = @user.lists.find_by(category: params[:list])
     movie_list = MovieList.new(list: list, movie: @movie)
     if movie_list.save
-      redirect_to @movie, notice: "Adicionado a lista #{list.category} com sucesso"
+      redirect_to @movie, notice: "Adicionado a lista #{list.humanized_category_name} com sucesso"
     else
       flash.now[:alert] = "Erro ao adiconar aos favoritos"
       render @movie
