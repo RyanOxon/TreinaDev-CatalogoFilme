@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="mb-2">
+    <span class="bold">Nome: </span>
+    <span><%= @user_profile.name %></span>
+  </div>
+  <div class="mb-2">
+    <span class="bold">Idade: </span>
+    <span><%= @user_profile.age %> anos</span>
+  </div>
+  <div class="mb-2">
+    <span class="bold">País: </span>
+    <span><%= @user_profile.country %></span>
+  </div>
+  <div class="mb-2">
+    <span class="bold">Cidade: </span>
+    <span><%= @user_profile.city %> - <%= @user_profile.state %></span>
+  </div>
+  <div class="mb-2">
+    <span class="bold">Sobre mim: </span>
+    <span><%= @user_profile.about %></span>
+  </div>
+  <div>
+    <%= link_to "Editar", edit_user_profile_path, class: "btn btn-secondary" %>
+  </div>
+</div>
