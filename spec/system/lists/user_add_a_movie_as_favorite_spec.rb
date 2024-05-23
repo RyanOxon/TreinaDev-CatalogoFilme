@@ -20,7 +20,7 @@ describe "user add a movie as favorite" do
 
   end
 
-  it "and add to fav sucessfully" do
+  it "sucessfully" do
     user = User.create!(email: 'user@user', password: '123456')
     genre = Gender.create!(name: "Ficção Cientifica")
     director = Director.create!(name: "Christopher Nolan", nacionalidade: "Inglaterra", data_nascimento: "30/06/1970", gender: genre)

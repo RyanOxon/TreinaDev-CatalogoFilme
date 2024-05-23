@@ -10,7 +10,7 @@ describe "requests for movie" do
                               sinopse: "Um grupo de exploradores faz uso de um buraco de minhoca recém-descoberto para superar as limitações de viagens espaciais humanas e conquistar as grandes distâncias envolvidas em uma viagem interestelar.", 
                               director: director, gender: genre)
   
-      post favorite_movie_path(movie.id)
+      post add_list_movie_path(movie.id), params: {list: "favorite"}
 
       expect(response).to redirect_to new_user_session_path 
     end

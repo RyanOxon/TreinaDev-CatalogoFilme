@@ -4,5 +4,5 @@ class List < ApplicationRecord
   has_many :movie_lists
   has_many :movies, through: :movie_lists
 
-  enum category: {Favorite: 0}
+  enum category: {favorite: 0, to_watch: 1}
 end

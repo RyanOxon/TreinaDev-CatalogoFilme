@@ -8,13 +8,14 @@
   <div class="dropdown" >
     <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Adicionar a uma lista </button>
     <ul class="dropdown-menu">
-      <li> <%= button_to 'Favoritos', favorite_movie_path, method: :post, class:"dropdown-item", disabled: current_user.check_favorite(@movie.id) %></li>
+      <li> <%= button_to 'Favoritos', add_list_movie_path(list: "favorite"), method: :post, class:"dropdown-item", disabled: current_user.check_list("favorite", @movie.id) %></li>
+      <li> <%= button_to 'Quero assistir', add_list_movie_path(list: "to_watch"), method: :post, class:"dropdown-item", disabled: current_user.check_list("to_watch", @movie.id) %></li>
     </ul>
   </div>
 <% end %>
 
 <div id="film-show">
-  <%= render @movie %>
+<%= render @movie %>
   
 </div>
 
