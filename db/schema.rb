@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_22_194512) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_22_213206) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -53,6 +53,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_194512) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "movie_lists", force: :cascade do |t|
+    t.integer "list_id", null: false
+    t.integer "movie_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_movie_lists_on_list_id"
+    t.index ["movie_id"], name: "index_movie_lists_on_movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -99,6 +116,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_194512) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "directors", "genders"
+  add_foreign_key "lists", "users"
+  add_foreign_key "movie_lists", "lists"
+  add_foreign_key "movie_lists", "movies"
   add_foreign_key "movies", "directors"
   add_foreign_key "movies", "genders"
   add_foreign_key "user_profiles", "users"

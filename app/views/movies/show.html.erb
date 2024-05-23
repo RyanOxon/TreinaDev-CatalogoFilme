@@ -4,7 +4,14 @@
   <%= link_to "Voltar a lista de Filmes", movies_path, class:"new-button", style:"margin-left: 0"%>
   <%= button_to "Deletar este filme", @movie, method: :delete, class:"delete-button" %>
 </div>
-
+<% if user_signed_in? %>
+  <div class="dropdown" >
+    <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Adicionar a uma lista </button>
+    <ul class="dropdown-menu">
+      <li> <%= button_to 'Favoritos', favorite_movie_path, method: :post, class:"dropdown-item", disabled: current_user.check_favorite(@movie.id) %></li>
+    </ul>
+  </div>
+<% end %>
 
 <div id="film-show">
   <%= render @movie %>
