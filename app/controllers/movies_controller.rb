@@ -1,5 +1,18 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: %i[ show edit update destroy ]
+  before_action :set_movie, only: %i[ show edit update destroy add_list ]
+  before_action :authenticate_user!, only: %i[ add_list ]
+
+  def add_list
+    @user = current_user
+    list = @user.lists.find_by(category: params[:list])
+    movie_list = MovieList.new(list: list, movie: @movie)
+    if movie_list.save
+      redirect_to @movie, notice: "Adicionado a lista #{list.humanized_category_name} com sucesso"
+    else
+      flash.now[:alert] = "Erro ao adiconar aos favoritos"
+      render @movie
+    end
+  end
 
   def index
     @movies = Movie.all

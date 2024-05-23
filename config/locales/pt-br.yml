@@ -1,6 +1,10 @@
 pt-BR:
   activerecord:
     attributes:
+      list:
+        category:
+          favorite: Favoritos
+          to_watch: Quero assistir
       user_profile:
         age: Idade
         name: Nome
