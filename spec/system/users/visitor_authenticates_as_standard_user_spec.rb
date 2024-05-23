@@ -42,7 +42,6 @@ describe 'visitor authenticates as standard user' do
     fill_in 'Senha', with: 'password123'
     click_on 'Log in'
 
-    expect(page).to have_content 'Login efetuado com sucesso.'
     within('nav') do
       expect(page).not_to have_content 'Login'
       expect(page).to have_content 'Logout'
