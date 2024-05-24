@@ -1,6 +1,10 @@
 <h1 class="page-top">Catalogo de Filmes</h1>
 <%= link_to "Adicionar novo filme", new_movie_path, class:"new-button" %>
 
-<%= render "/shared/list", movies: @movies.all %>
+<%= render 'filter_bar' %>
 
+<%= render "/shared/list", movies: @movies %>
+<% if @movies.empty? %>
+  <h2 class="text-center">Nenhum filme encontrado</h2>
+<% end %>
 
