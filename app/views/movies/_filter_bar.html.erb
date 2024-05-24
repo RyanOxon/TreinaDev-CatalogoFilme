@@ -1,0 +1,32 @@
+<div class="container text-center mb-5">
+  <div class="shadow rounded-4 d-inline-block text-center py-1 px-3">
+    <strong class="text-center d-inline-block">Filtrar por:</strong>
+    <%= link_to 'Todos os Filmes', movies_path, class: "btn me-1 py-1" %>
+    <span>|</span>
+    <%= link_to 'AZ', movies_path(filter: "AZ"), class: "btn me-1 py-1" %>
+    <span>|</span>
+    <%= link_to 'ZA', movies_path(filter: "ZA"), class: "btn me-1 py-1" %>
+    <span>|</span>
+    <%= link_to 'Data de lançamento', movies_path(filter: "Data de lançamento"), class: "btn me-1 py-1" %>
+    <span>|</span>
+
+    <div class="dropdown d-inline-block me-1 py-1" >
+      <button class="btn link-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Gênero </button>
+      <ul class="dropdown-menu">
+        <% Gender.all.each do |gender| %>
+          <li> <%= link_to gender.name, movies_path(filter: "Gênero-#{gender.name}"), class:"dropdown-item" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="d-inline-block me-1 py-1" id="search">
+      <%= form_with url: movies_path, method: :get do |f| %>
+        <div class="d-flex">
+          <%= f.text_field :query, class:"form-control", placeholder: "Procurar filme..." %>
+          <%= f.submit "Procurar", class: "btn btn-outline-dark ms-2" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
