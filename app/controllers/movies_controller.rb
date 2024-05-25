@@ -1,6 +1,19 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: %i[ show edit update destroy add_list ]
-  before_action :authenticate_user!, only: %i[ add_list ]
+  before_action :set_movie, only: %i[ show edit update destroy remove_list add_list]
+  before_action :authenticate_user!, only: %i[ add_list remove_list ]
+
+  def remove_list
+    @list = List.find_by(category: params[:list])
+    #unless list.user == current_user
+    #  return redirect_to root_path, alert: 'Não autorizado'
+    #end
+    movie_list = @list.movie_lists.find_by(movie_id: @movie.id)
+    if movie_list.destroy
+      redirect_to request.referer, notice: "Removido de #{@list.humanized_category_name} com sucesso"
+    else
+      render @list
+    end
+  end
 
   def add_list
     @user = current_user

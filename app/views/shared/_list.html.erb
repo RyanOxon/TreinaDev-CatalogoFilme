@@ -7,7 +7,7 @@
         <% else %>
           <%= image_tag("img_padrao.jpg", alt: movie.title) %>    
         <% end %>
-        <div id="<%= dom_id movie %>">
+        <div>
           <p id="titulo" >
             <%= movie.title %>
           </p>
@@ -15,7 +15,13 @@
             <%= movie.ano_de_lancamento %>
             <%= movie.foi_lancado ? "Ja lançado" : "Em breve nos cinemas" %>
           </p>
-          
+        </div>
+      <% end %>
+      
+      <% unless list.nil? %>
+        <%= button_to 'Remover', remove_list_movie_path(movie, list: list.category) %>
+      <% end %>
+      
         </div>
       <% end %>
     </div>

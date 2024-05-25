@@ -16,8 +16,9 @@ describe "User adds a movie on to watch list" do
     click_on movie.title
 
     expect(page).to have_content 'Interestelar'
-    expect(page).to have_content 'Adicionar a uma lista'
-    expect(page).to have_button 'Quero assistir'
+    expect(page).to have_content 'Listas'
+    expect(page).to have_button 'Adicionar Quero assistir'
+
 
   end
   it "sucessfully" do
@@ -35,6 +36,7 @@ describe "User adds a movie on to watch list" do
     click_on "Quero assistir"
 
     expect(page).to have_content "Adicionado a lista Quero assistir com sucesso"
-    expect(page).to have_button 'Quero assistir', disabled: true
+    expect(page).to have_button 'Remover Quero assistir'
+
   end
 end

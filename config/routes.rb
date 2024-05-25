@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :movies do
+    member do
+      post :add_list
+      post :remove_list
+    end
     post :add_list, on: :member
   end
 

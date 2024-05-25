@@ -6,10 +6,20 @@
 </div>
 <% if user_signed_in? %>
   <div class="dropdown" >
-    <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Adicionar a uma lista </button>
+    <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Listas </button>
     <ul class="dropdown-menu">
-      <li> <%= button_to 'Favoritos', add_list_movie_path(list: "favorite"), method: :post, class:"dropdown-item", disabled: current_user.check_list("favorite", @movie.id) %></li>
-      <li> <%= button_to 'Quero assistir', add_list_movie_path(list: "to_watch"), method: :post, class:"dropdown-item", disabled: current_user.check_list("to_watch", @movie.id) %></li>
+    
+    <% if current_user.check_list("favorite", @movie.id) %>
+      <li> <%= button_to 'Remover Favoritos', remove_list_movie_path(@movie, list: "favorite"), method: :post, class:"dropdown-item" %></li>
+    <% else %>
+      <li> <%= button_to 'Adicionar Favoritos', add_list_movie_path(@movie, list: "favorite"), method: :post, class:"dropdown-item"  %></li>
+    <% end %>
+    
+    <% if current_user.check_list("to_watch", @movie.id) %>
+      <li> <%= button_to 'Remover Quero assistir', remove_list_movie_path(@movie, list: "to_watch"), method: :post, class:"dropdown-item"  %></li>
+    <% else %>
+      <li> <%= button_to 'Adicionar Quero assistir', add_list_movie_path(@movie, list: "to_watch"), method: :post, class:"dropdown-item"  %></li>
+    <% end %>
     </ul>
   </div>
 <% end %>
