@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :movies do
-    post :add_list, on: :member
+    member do
+      post :add_list
+      post :remove_list
+    end
   end
 
   resources :user_profiles, only: %i[ new create show edit update ] do

@@ -16,8 +16,8 @@ describe "user add a movie as favorite" do
     click_on movie.title
 
     expect(page).to have_content 'Interestelar'
-    expect(page).to have_content 'Adicionar a uma lista'
-    expect(page).to have_button 'Favoritos'
+    expect(page).to have_content 'Listas'
+    expect(page).to have_button 'Adicionar Favoritos'
 
   end
 
@@ -36,7 +36,7 @@ describe "user add a movie as favorite" do
     click_on "Favoritos"
 
     expect(page).to have_content "Adicionado a lista Favoritos com sucesso"
-    expect(page).to have_button 'Favoritos', disabled: true
+    expect(page).to have_button 'Remover Favoritos'
     
   end
 
