@@ -19,6 +19,7 @@ describe "User adds a movie on to watch list" do
     expect(page).to have_content 'Listas'
     expect(page).to have_button 'Adicionar Quero assistir'
 
+
   end
   it "sucessfully" do
     user = User.create!(email: 'user@user', password: '123456')
@@ -36,5 +37,6 @@ describe "User adds a movie on to watch list" do
 
     expect(page).to have_content "Adicionado a lista Quero assistir com sucesso"
     expect(page).to have_button 'Remover Quero assistir'
+
   end
 end

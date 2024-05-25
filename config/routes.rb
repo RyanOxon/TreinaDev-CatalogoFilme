@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       post :add_list
       post :remove_list
     end
+    post :add_list, on: :member
   end
 
   resources :user_profiles, only: %i[ new create show edit update ] do

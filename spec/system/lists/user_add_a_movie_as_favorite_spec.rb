@@ -37,6 +37,7 @@ describe "user add a movie as favorite" do
 
     expect(page).to have_content "Adicionado a lista Favoritos com sucesso"
     expect(page).to have_button 'Remover Favoritos'
+
     
   end
 

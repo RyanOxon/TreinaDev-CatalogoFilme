@@ -23,6 +23,5 @@
     <%= link_to "Editar", edit_user_profile_path, class: "btn btn-secondary" %>
     <%= link_to 'Meus Favoritos', user_profile_list_path(@user_profile, current_user.find_list("favorite").id)  %>
     <%= link_to 'Quero assistir', user_profile_list_path(@user_profile, current_user.find_list("to_watch").id)  %>
-
   </div>
 </div>
