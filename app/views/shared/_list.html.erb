@@ -1,4 +1,5 @@
 <div id="listagem-filme">
+<<<<<<< HEAD
   <% movies.each do |movie| %>
     <%= link_to movie_path(movie) do%>
       <% if movie.picture.attached?%>
@@ -17,5 +18,27 @@
         
       </div>
     <% end %>
+=======
+  <% movies.each_with_index do |movie, index| %>
+    <div id=<%="movie-#{index}"%>>
+      <%= link_to movie_path(movie) do%>
+        <% if movie.picture.attached?%>
+          <%= image_tag(movie.picture, alt: movie.title) %>
+        <% else %>
+          <%= image_tag("img_padrao.jpg", alt: movie.title) %>    
+        <% end %>
+        <div id="<%= dom_id movie %>">
+          <p id="titulo" >
+            <%= movie.title %>
+          </p>
+          <p id="sub-titulo">
+            <%= movie.ano_de_lancamento %>
+            <%= movie.foi_lancado ? "Ja lançado" : "Em breve nos cinemas" %>
+          </p>
+          
+        </div>
+      <% end %>
+    </div>
+>>>>>>> development
   <% end %>
 </div>
