@@ -6,6 +6,7 @@ pt-BR:
           favorite: Favoritos
           to_watch: Quero assistir
       user_profile:
+        profile_picture: Foto de Perfil
         age: Idade
         name: Nome
         country: País

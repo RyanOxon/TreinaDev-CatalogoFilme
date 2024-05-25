@@ -31,6 +31,7 @@ describe 'standard user completes profile registration' do
     fill_in 'Estado', with: 'Paraná'
     fill_in 'Cidade', with: 'Londrina'
     fill_in 'Sobre mim', with: 'Sou uma pessoa bem bacana!'
+    attach_file 'Foto de Perfil', Rails.root.join('spec', 'files', 'reuri.jpeg')
 
     click_on 'Enviar'
 
@@ -41,5 +42,23 @@ describe 'standard user completes profile registration' do
     expect(page).to have_content 'Paraná'
     expect(page).to have_content 'Londrina'
     expect(page).to have_content 'Sou uma pessoa bem bacana!'
+    expect(page).to have_css('img[src*="reuri.jpeg"]')
+  end
+  it 'and does not fill all mandatory fields' do
+    julia = User.create!(email: 'kanzaki@myself.com', password: 'password123')
+    login_as julia
+    visit new_user_profile_path
+
+    fill_in 'Idade', with: nil
+    fill_in 'Nome', with: nil
+    fill_in 'País', with: 'Brasil'
+    fill_in 'Estado', with: 'Paraná'
+    fill_in 'Cidade', with: 'Londrina'
+    fill_in 'Sobre mim', with: 'Sou uma pessoa bem bacana!'
+
+    click_on 'Enviar'
+
+    expect(page).to have_content 'Nome não pode ficar em branco'
+    expect(page).to have_content 'Idade não pode ficar em branco'
   end
 end

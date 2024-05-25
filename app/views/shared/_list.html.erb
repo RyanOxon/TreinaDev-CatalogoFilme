@@ -1,8 +1,8 @@
 <div id="listagem-filme">
   <% movies.each_with_index do |movie, index| %>
     <div id=<%="movie-#{index}"%>>
-      <%= link_to movie_path(movie) do%>
-        <% if movie.picture.attached?%>
+      <%= link_to movie_path(movie) do %>
+        <% if movie.picture.attached? %>
           <%= image_tag(movie.picture, alt: movie.title) %>
         <% else %>
           <%= image_tag("img_padrao.jpg", alt: movie.title) %>    
@@ -21,9 +21,7 @@
       <% unless list.nil? %>
         <%= button_to 'Remover', remove_list_movie_path(movie, list: list.category) %>
       <% end %>
-      
-        </div>
-      <% end %>
+
     </div>
   <% end %>
 </div>
