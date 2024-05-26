@@ -1,5 +1,12 @@
 <div class="container">
   <div class="mb-2">
+    <% if @user_profile.profile_picture.present? %>
+      <%= image_tag(@user_profile.profile_picture) %>
+    <% else %>
+      <%= image_tag "user.png" %>
+    <% end %>
+  </div>
+  <div class="mb-2">
     <span class="bold">Nome: </span>
     <span><%= @user_profile.name %></span>
   </div>
